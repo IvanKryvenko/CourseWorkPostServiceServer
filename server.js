@@ -7,6 +7,9 @@ const port = 3000;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+const db = require("./app/models");
+db.sequelize.sync();
+
 app.get('/', (req, res) => {
     res.json({ message: 'Start page' });
 });

@@ -1,0 +1,27 @@
+{
+  "name": "dbservercourse",
+  "version": "1.0.0",
+  "description": "server side for course work",
+  "main": "server.js",
+  "scripts": {
+    "test": "node test server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IvanKryvenko/CourseWorkPostServiceServer.git"
+  },
+  "author": "IKryv",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IvanKryvenko/CourseWorkPostServiceServer/issues"
+  },
+  "homepage": "https://github.com/IvanKryvenko/CourseWorkPostServiceServer#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.6.2"
+  }
+}
