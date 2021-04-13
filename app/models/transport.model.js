@@ -16,4 +16,6 @@ module.export = (sequelize, Sequelize) => {
             type: Sequelize.STRING
         }
     });
+
+    return Transport;
 }
