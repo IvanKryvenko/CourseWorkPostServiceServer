@@ -19,4 +19,6 @@ module.export = (sequelize, Sequelize) => {
             type: Sequelize.NUMBER
         }
     });
+
+    return Client;
 }
