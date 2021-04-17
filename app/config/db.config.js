@@ -1,6 +1,6 @@
 module.exports = {
     HOST: "localhost",
-    USER: "ikryv",
-    PASSWORD: "Qltvjuekznb21",
-    DB: "post_service_course_work",
+    USER: "root",
+    PASSWORD: "CfymDfym21))",
+    DB: "posting_service_course-work"
   };
