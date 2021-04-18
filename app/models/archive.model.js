@@ -1,4 +1,4 @@
-const sql = require("./db.js");
+const sql = require("./index.js");
 
 // constructor
 const Archive = function(archive) {
@@ -11,7 +11,7 @@ const Archive = function(archive) {
   this.sum = archive.sum;
 };
 
-Customer.create = (newArchivedDelivery, result) => {
+Archive.create = (newArchivedDelivery, result) => {
   sql.query("INSERT INTO archive SET ?", newArchiveDelivery, (err, res) => {
     if (err) {
       console.log("error: ", err);
@@ -24,7 +24,7 @@ Customer.create = (newArchivedDelivery, result) => {
   });
 };
 
-Customer.findByDeliveryNumber = (issuedEmployee, sum, result) => {
+Archive.findByDeliveryNumber = (issuedEmployee, sum, result) => {
   sql.query(`SELECT * FROM archive WHERE issuedEmployee = ${issuedEmployee} AND sum > ${sum}`, (err, res) => {
     if (err) {
       console.log("error: ", err);
@@ -42,7 +42,7 @@ Customer.findByDeliveryNumber = (issuedEmployee, sum, result) => {
   });
 };
 
-Customer.getAll = result => {
+Archive.getAll = result => {
   sql.query("SELECT * FROM archive", (err, res) => {
     if (err) {
       console.log("error: ", err);
@@ -55,7 +55,7 @@ Customer.getAll = result => {
   });
 };
 
-Customer.updateById = (archive, result) => {
+Archive.updateById = (archive, result) => {
   sql.query(
     "UPDATE archive SET deliveryNumber = ?, receiveDate = ?, arriveDate = ?, issuedEmployee = ?, payment = ?, deliveryStatus = ?, sum =? WHERE deliveryNumber = ?",
     [archive.deliveryNumber, archive.receiveDate, archive.arriveDate, archive.issuedEmployee, archive.payment, archive.deliveryStatus, archive.sum],
@@ -77,7 +77,7 @@ Customer.updateById = (archive, result) => {
   );
 };
 
-Customer.remove = (archive, result) => {
+Archive.remove = (archive, result) => {
   sql.query("DELETE FROM archive WHERE deliveryNumber = ?", archive, (err, res) => {
     if (err) {
       console.log("error: ", err);

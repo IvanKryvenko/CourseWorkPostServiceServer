@@ -1,4 +1,4 @@
-const sql = require("./db.js");
+const sql = require("./index.js");
 
 // constructor
 const City = function(city) {
@@ -10,7 +10,7 @@ const City = function(city) {
   this.postOfficesCount = city.postOfficesCount;
 };
 
-Customer.create = (newCity, result) => {
+City.create = (newCity, result) => {
   sql.query("INSERT INTO city SET ?", newCity, (err, res) => {
     if (err) {
       console.log("error: ", err);
@@ -23,7 +23,7 @@ Customer.create = (newCity, result) => {
   });
 };
 
-Customer.findByPopularityAndPostOfficesCount = (popularity, postOfficesCount, result) => {
+City.findByPopularityAndPostOfficesCount = (popularity, postOfficesCount, result) => {
   sql.query(`SELECT * FROM customers WHERE popularity = ${popularity} AND postOfficesCount = ${postOfficesCount}`, (err, res) => {
     if (err) {
       console.log("error: ", err);
@@ -41,7 +41,7 @@ Customer.findByPopularityAndPostOfficesCount = (popularity, postOfficesCount, re
   });
 };
 
-Customer.getAll = result => {
+City.getAll = result => {
   sql.query("SELECT * FROM city", (err, res) => {
     if (err) {
       console.log("error: ", err);
@@ -54,7 +54,7 @@ Customer.getAll = result => {
   });
 };
 
-Customer.updateById = (city, result) => {
+City.updateById = (city, result) => {
   sql.query(
     "UPDATE city SET country = ?, cityName = ?, square = ?, infrastructureLevel = ?, popularity = ?, postOfficesCount = ? WHERE country = ? AND cityName = ? AND square = ?",
     [city.cityName, city.country, city.square, city.infrastructureLevel, city.popularity, city.postOfficesCount],
@@ -76,7 +76,7 @@ Customer.updateById = (city, result) => {
   );
 };
 
-Customer.remove = (city, result) => {
+City.remove = (city, result) => {
   sql.query("DELETE FROM city WHERE cityName = ? AND country = ? AND square = ?", city, (err, res) => {
     if (err) {
       console.log("error: ", err);
