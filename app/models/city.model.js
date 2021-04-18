@@ -24,7 +24,7 @@ City.create = (newCity, result) => {
 };
 
 City.findByPopularityAndPostOfficesCount = (popularity, postOfficesCount, result) => {
-  sql.query(`SELECT * FROM customers WHERE popularity = ${popularity} AND postOfficesCount = ${postOfficesCount}`, (err, res) => {
+  sql.query(`SELECT * FROM city WHERE popularity = ${popularity} AND postOfficesCount = ${postOfficesCount}`, (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(err, null);
@@ -71,7 +71,7 @@ City.updateById = (city, result) => {
       }
 
       console.log("updated city: ", { ...city });
-      result(null, { id: id, ...customer });
+      result(null, { ...city });
     }
   );
 };
