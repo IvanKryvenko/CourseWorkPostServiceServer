@@ -54,10 +54,10 @@ City.getAll = result => {
   });
 };
 
-City.updateById = (city, result) => {
+City.updateByCountryAndCityName = (city, result) => {
   sql.query(
-    "UPDATE city SET country = ?, cityName = ?, square = ?, infrastructureLevel = ?, popularity = ?, postOfficesCount = ? WHERE country = ? AND cityName = ? AND square = ?",
-    [city.cityName, city.country, city.square, city.infrastructureLevel, city.popularity, city.postOfficesCount],
+    "UPDATE city SET country = ?, cityName = ?, square = ?, infrastructureLevel = ?, popularity = ?, postOfficesCount = ? WHERE country = ? AND cityName = ?",
+    [city.cityName, city.country, city.square, city.infrastructureLevel, city.popularity, city.postOfficesCount, city.country, city.cityName],
     (err, res) => {
       if (err) {
         console.log("error: ", err);

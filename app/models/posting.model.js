@@ -60,7 +60,7 @@ Posting.getAll = result => {
 Posting.updateByDeliveryNumber = (delivery, result) => {
   sql.query(
     "UPDATE posting SET deliveryNumber = ?, sender = ?, receiver = ?, senderPostOffice = ?, receivePostOffice = ?, sendTime = ?, deliveryTime = ?, goodType = ?, deliveryType = ? WHERE deliveryNumber = ?",
-    [delivery.deliveryNumber, delivery.sender, delivery.receiver, delivery.senderPostOffice, delivery.receiverPostOffice, delivery.sendTime, delivery.deliveryTime, delivery.goodType, delivery.deliveryType],
+    [delivery.deliveryNumber, delivery.sender, delivery.receiver, delivery.senderPostOffice, delivery.receiverPostOffice, delivery.sendTime, delivery.deliveryTime, delivery.goodType, delivery.deliveryType, delivery.deliveryNumber],
     (err, res) => {
       if (err) {
         console.log("error: ", err);

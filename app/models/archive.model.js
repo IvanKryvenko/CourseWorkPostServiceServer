@@ -55,10 +55,10 @@ Archive.getAll = result => {
   });
 };
 
-Archive.updateById = (archive, result) => {
+Archive.updateByDeliveryNumber = (archive, result) => {
   sql.query(
-    "UPDATE archive SET deliveryNumber = ?, receiveDate = ?, arriveDate = ?, issuedEmployee = ?, payment = ?, deliveryStatus = ?, sum =? WHERE deliveryNumber = ?",
-    [archive.deliveryNumber, archive.receiveDate, archive.arriveDate, archive.issuedEmployee, archive.payment, archive.deliveryStatus, archive.sum],
+    "UPDATE archive SET deliveryNumber = ?, receiveDate = ?, arriveDate = ?, issuedEmployee = ?, payment = ?, deliveryStatus = ?, sum = ? WHERE deliveryNumber = ?",
+    [archive.deliveryNumber, archive.receiveDate, archive.arriveDate, archive.issuedEmployee, archive.payment, archive.deliveryStatus, archive.sum, archive.deliveryNumber],
     (err, res) => {
       if (err) {
         console.log("error: ", err);
