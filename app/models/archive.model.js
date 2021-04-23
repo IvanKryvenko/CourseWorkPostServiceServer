@@ -24,7 +24,7 @@ Archive.create = (newArchivedDelivery, result) => {
   });
 };
 
-Archive.findByDeliveryNumber = (issuedEmployee, sum, result) => {
+Archive.findByIssuedEmployeeAndSum = (issuedEmployee, sum, result) => {
   sql.query(`SELECT * FROM archive WHERE issuedEmployee = ${issuedEmployee} AND sum > ${sum}`, (err, res) => {
     if (err) {
       console.log("error: ", err);

@@ -23,7 +23,7 @@ Client.create = (newClient, result) => {
   });
 };
 
-Client.findByEmail = (deliveryCount, age, result) => {
+Client.findByDeliveryCountAndAge = (deliveryCount, age, result) => {
   sql.query(`SELECT * FROM client WHERE deliveryCount = ${deliveryCount} AND age >= ${age}`, (err, res) => {
     if (err) {
       console.log("error: ", err);
