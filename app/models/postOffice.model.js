@@ -32,8 +32,8 @@ PostOffice.findByWeightLimitAndWorkersCount = (weightLimit, workersCount, result
     }
 
     if (res.length) {
-      console.log("found post office: ", res[0]);
-      result(null, res[0]);
+      console.log("found post office: ", res);
+      result(null, res);
       return;
     }
 

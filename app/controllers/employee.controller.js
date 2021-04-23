@@ -65,7 +65,6 @@ exports.update = (req, res) => {
   console.log(req.body);
 
   Employee.updateByPhone(
-    req.body.phoneNumber,
     new Employee(req.body),
     (err, data) => {
       if (err) {

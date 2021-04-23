@@ -32,8 +32,8 @@ Transport.findByReleaseDateAndCapacity = (releaseDate, capacity, result) => {
     }
 
     if (res.length) {
-      console.log("found transport: ", res[0]);
-      result(null, res[0]);
+      console.log("found transport: ", res);
+      result(null, res);
       return;
     }
 

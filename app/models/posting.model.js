@@ -35,8 +35,8 @@ Posting.findByDeliveryTimeAndDeliveryType = (deliveryType, deliveryTime, result)
     }
 
     if (res.length) {
-      console.log("found delivery: ", res[0]);
-      result(null, res[0]);
+      console.log("found delivery: ", res);
+      result(null, res);
       return;
     }
 

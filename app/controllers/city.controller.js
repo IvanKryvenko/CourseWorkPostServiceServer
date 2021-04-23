@@ -63,9 +63,7 @@ exports.update = (req, res) => {
 
   console.log(req.body);
 
-  City.updateById(
-    req.body.country,
-    req.body.cityName,
+  City.updateByCountryAndCityName(
     new Customer(req.body),
     (err, data) => {
       if (err) {

@@ -32,8 +32,8 @@ Client.findByDeliveryCountAndAge = (deliveryCount, age, result) => {
     }
 
     if (res.length) {
-      console.log("found client: ", res[0]);
-      result(null, res[0]);
+      console.log("found client: ", res);
+      result(null, res);
       return;
     }
 

@@ -65,8 +65,7 @@ exports.update = (req, res) => {
 
   console.log(req.body);
 
-  Archive.updateById(
-    req.body.deliveryNumber,
+  Archive.updateByDeliveryNumber(
     new Customer(req.body),
     (err, data) => {
       if (err) {

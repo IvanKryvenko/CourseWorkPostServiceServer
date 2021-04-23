@@ -33,8 +33,8 @@ Archive.findByIssuedEmployeeAndSum = (issuedEmployee, sum, result) => {
     }
 
     if (res.length) {
-      console.log("found archived delivery: ", res[0]);
-      result(null, res[0]);
+      console.log("found archived delivery: ", res);
+      result(null, res);
       return;
     }
 

@@ -32,8 +32,8 @@ City.findByPopularityAndPostOfficesCount = (popularity, postOfficesCount, result
     }
 
     if (res.length) {
-      console.log("found city: ", res[0]);
-      result(null, res[0]);
+      console.log("found city: ", res);
+      result(null, res);
       return;
     }
 

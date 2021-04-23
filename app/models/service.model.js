@@ -31,8 +31,8 @@ Service.findByPriceAndRating = (price, rating, result) => {
     }
 
     if (res.length) {
-      console.log("found post sevice: ", res[0]);
-      result(null, res[0]);
+      console.log("found post sevice: ", res);
+      result(null, res);
       return;
     }
 

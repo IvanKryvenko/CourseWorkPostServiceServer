@@ -34,8 +34,8 @@ Employee.findBySalaryAndStartDate = (salary, workStartDate, result) => {
     }
 
     if (res.length) {
-      console.log("found employee: ", res[0]);
-      result(null, res[0]);
+      console.log("found employee: ", res);
+      result(null, res);
       return;
     }
 

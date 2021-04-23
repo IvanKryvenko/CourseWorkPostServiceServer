@@ -63,8 +63,7 @@ exports.update = (req, res) => {
 
   console.log(req.body);
 
-  Client.updateById(
-    req.body.email,
+  Client.updateByEmail(
     new Customer(req.body),
     (err, data) => {
       if (err) {
