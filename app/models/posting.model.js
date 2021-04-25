@@ -14,7 +14,7 @@ const Posting = function(posting) {
 };
 
 Posting.create = (newDelivery, result) => {
-  sql.query("INSERT INTO posting SET ?", newDelivery, (err, res) => {
+  sql.query("INSERT INTO delivery SET ?", newDelivery, (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(err, null);
@@ -27,7 +27,7 @@ Posting.create = (newDelivery, result) => {
 };
 
 Posting.findByDeliveryTimeAndDeliveryType = (deliveryType, deliveryTime, result) => {
-  sql.query(`SELECT * FROM posting WHERE deliveryType = ${deliveryType} AND deliveryTime = ${deliveryTime}`, (err, res) => {
+  sql.query(`SELECT * FROM delivery WHERE deliveryType = ${deliveryType} AND deliveryTime = ${deliveryTime}`, (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(err, null);
@@ -45,7 +45,7 @@ Posting.findByDeliveryTimeAndDeliveryType = (deliveryType, deliveryTime, result)
 };
 
 Posting.getAll = result => {
-  sql.query("SELECT * FROM posting", (err, res) => {
+  sql.query("SELECT * FROM delivery", (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(null, err);
@@ -59,8 +59,8 @@ Posting.getAll = result => {
 
 Posting.updateByDeliveryNumber = (delivery, result) => {
   sql.query(
-    "UPDATE posting SET deliveryNumber = ?, sender = ?, receiver = ?, senderPostOffice = ?, receivePostOffice = ?, sendTime = ?, deliveryTime = ?, goodType = ?, deliveryType = ? WHERE deliveryNumber = ?",
-    [delivery.deliveryNumber, delivery.sender, delivery.receiver, delivery.senderPostOffice, delivery.receiverPostOffice, delivery.sendTime, delivery.deliveryTime, delivery.goodType, delivery.deliveryType, delivery.deliveryNumber],
+    "UPDATE delivery SET sender = ?, receiver = ?, senderPostOffice = ?, receivePostOffice = ?, sendTime = ?, deliveryTime = ?, goodType = ?, deliveryType = ? WHERE deliveryNumber = ?",
+    [delivery.sender, delivery.receiver, delivery.senderPostOffice, delivery.receiverPostOffice, delivery.sendTime, delivery.deliveryTime, delivery.goodType, delivery.deliveryType, delivery.deliveryNumber],
     (err, res) => {
       if (err) {
         console.log("error: ", err);
@@ -80,7 +80,7 @@ Posting.updateByDeliveryNumber = (delivery, result) => {
 };
 
 Posting.remove = (delivery, result) => {
-  sql.query("DELETE FROM posting WHERE deliveryNumber = ?", delivery.deliveryNumber, (err, res) => {
+  sql.query("DELETE FROM delivery WHERE deliveryNumber = ?", delivery.deliveryNumber, (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(null, err);

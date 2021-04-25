@@ -56,8 +56,8 @@ PostOffice.getAll = result => {
 
 PostOffice.updateByCity = (postOffice, result) => {
   sql.query(
-    "UPDATE postOffice SET city = ?, officeNumber = ?, address = ?, officeType = ?, weightLimit = ?, workersCount = ? WHERE city = ? AND officeNumber = ?",
-    [postOffice.city, postOffice.officeNumber, postOffice.address, postOffice.officeType, postOffice.weightLimit, postOffice.workersCount, postOffice.city, postOffice.officeNumber],
+    "UPDATE postOffice SET address = ?, officeType = ?, weightLimit = ?, workersCount = ? WHERE city = ? AND officeNumber = ?",
+    [postOffice.address, postOffice.officeType, postOffice.weightLimit, postOffice.workersCount, postOffice.city, postOffice.officeNumber],
     (err, res) => {
       if (err) {
         console.log("error: ", err);

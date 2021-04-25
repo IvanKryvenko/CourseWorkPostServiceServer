@@ -56,8 +56,8 @@ Transport.getAll = result => {
 
 Transport.updateByLicensePlate = (transport, result) => {
   sql.query(
-    "UPDATE transport SET mark = ?, licensePlateNumber = ?, driverName = ?, transportType = ?, releaseDate = ?, capacity = ? WHERE licensePlateNumber = ?",
-    [transport.mark, transport.licensePlateNumber, transport.driverName, transport.transportType, transport.releaseDate, transport.capacity, transport.licensePlateNumber],
+    "UPDATE transport SET mark = ?, driverName = ?, transportType = ?, releaseDate = ?, capacity = ? WHERE licensePlateNumber = ?",
+    [transport.mark, transport.driverName, transport.transportType, transport.releaseDate, transport.capacity, transport.licensePlateNumber],
     (err, res) => {
       if (err) {
         console.log("error: ", err);

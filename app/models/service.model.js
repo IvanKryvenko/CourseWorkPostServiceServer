@@ -55,8 +55,8 @@ Service.getAll = result => {
 
 Service.updateByServiceName = (service, result) => {
   sql.query(
-    "UPDATE service SET serviceName = ?, serviceCustomer = ?, paymentType = ?, servicePrice = ?, serviceRating = ? WHERE serviceName = ? AND serviceCustomer = ?",
-    [service.serviceName, service.serviceCustomer, service.paymentType, service.servicePrice, service.serviceRating, service.serviceName, service.serviceCustomer],
+    "UPDATE service SET paymentType = ?, servicePrice = ?, serviceRating = ? WHERE serviceName = ? AND serviceCustomer = ?",
+    [service.paymentType, service.servicePrice, service.serviceRating, service.serviceName, service.serviceCustomer],
     (err, res) => {
       if (err) {
         console.log("error: ", err);

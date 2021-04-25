@@ -56,8 +56,8 @@ City.getAll = result => {
 
 City.updateByCountryAndCityName = (city, result) => {
   sql.query(
-    "UPDATE city SET country = ?, cityName = ?, square = ?, infrastructureLevel = ?, popularity = ?, postOfficesCount = ? WHERE country = ? AND cityName = ?",
-    [city.cityName, city.country, city.square, city.infrastructureLevel, city.popularity, city.postOfficesCount, city.country, city.cityName],
+    "UPDATE city SET square = ?, infrastructureLevel = ?, popularity = ?, postOfficesCount = ? WHERE country = ? AND cityName = ?",
+    [city.square, city.infrastructureLevel, city.popularity, city.postOfficesCount, city.country, city.cityName],
     (err, res) => {
       if (err) {
         console.log("error: ", err);

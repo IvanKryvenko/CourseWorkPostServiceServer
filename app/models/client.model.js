@@ -56,8 +56,8 @@ Client.getAll = result => {
 
 Client.updateByEmail = (client, result) => {
   sql.query(
-    "UPDATE client SET clientName = ?, phoneNumber = ?, email = ?, city = ?, age = ?, deliveryCount = ? WHERE email = ?",
-    [client.name, client.phoneNumber, client.email, client.city, client.age, client.deliveryCount, client.email],
+    "UPDATE client SET clientName = ?, phoneNumber = ?, city = ?, age = ?, deliveryCount = ? WHERE email = ?",
+    [client.clientName, client.phoneNumber, client.city, client.age, client.deliveryCount, client.email],
     (err, res) => {
       if (err) {
         console.log("error: ", err);

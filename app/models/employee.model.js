@@ -58,8 +58,8 @@ Employee.getAll = result => {
 
 Employee.updateByPhone = (employee, result) => {
   sql.query(
-    "UPDATE employee SET employeeName = ?, birthName = ?, workExperience = ?, employeePosition = ?, phoneNumber = ?, postOffice = ?, workStartDate = ?, salary = ? WHERE phoneNumber = ?",
-    [employee.employeeName, employee.birthDate, employee.workExperience, employee.employeePosition, employee.phoneNumber, employee.postOffice, employee.workStartDate, employee.salary, employee.phoneNumber],
+    "UPDATE employee SET employeeName = ?, birthName = ?, workExperience = ?, employeePosition = ?,  postOffice = ?, workStartDate = ?, salary = ? WHERE phoneNumber = ?",
+    [employee.employeeName, employee.birthDate, employee.workExperience, employee.employeePosition, employee.postOffice, employee.workStartDate, employee.salary, employee.phoneNumber],
     (err, res) => {
       if (err) {
         console.log("error: ", err);

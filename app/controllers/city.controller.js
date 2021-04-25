@@ -64,7 +64,7 @@ exports.update = (req, res) => {
   console.log(req.body);
 
   City.updateByCountryAndCityName(
-    new Customer(req.body),
+    new City(req.body),
     (err, data) => {
       if (err) {
         if (err.kind === "not_found") {

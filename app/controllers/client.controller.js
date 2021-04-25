@@ -64,7 +64,7 @@ exports.update = (req, res) => {
   console.log(req.body);
 
   Client.updateByEmail(
-    new Customer(req.body),
+    new Client(req.body),
     (err, data) => {
       if (err) {
         if (err.kind === "not_found") {

@@ -17,7 +17,7 @@ exports.create = (req, res) => {
     sum: req.body.sum
   });
 
-  Customer.create(archive, (err, data) => {
+  Archive.create(archive, (err, data) => {
     if (err)
       res.status(500).send({
         message:
@@ -28,11 +28,11 @@ exports.create = (req, res) => {
 };
 
 exports.findAll = (req, res) => {
-  Customer.getAll((err, data) => {
+  Archive.getAll((err, data) => {
     if (err)
       res.status(500).send({
         message:
-          err.message || "Some error occurred while retrieving customers."
+          err.message || "Some error occurred while retrieving archive."
       });
     else res.send(data);
   });
@@ -54,7 +54,6 @@ exports.findOne = (req, res) => {
   });
 };
 
-// Update a Customer identified by the customerId in the request
 exports.update = (req, res) => {
   // Validate Request
   if (!req.body) {
@@ -66,7 +65,7 @@ exports.update = (req, res) => {
   console.log(req.body);
 
   Archive.updateByDeliveryNumber(
-    new Customer(req.body),
+    new Archive(req.body),
     (err, data) => {
       if (err) {
         if (err.kind === "not_found") {

@@ -57,8 +57,8 @@ Archive.getAll = result => {
 
 Archive.updateByDeliveryNumber = (archive, result) => {
   sql.query(
-    "UPDATE archive SET deliveryNumber = ?, receiveDate = ?, arriveDate = ?, issuedEmployee = ?, payment = ?, deliveryStatus = ?, sum = ? WHERE deliveryNumber = ?",
-    [archive.deliveryNumber, archive.receiveDate, archive.arriveDate, archive.issuedEmployee, archive.payment, archive.deliveryStatus, archive.sum, archive.deliveryNumber],
+    "UPDATE archive SET receiveDate = ?, arriveDate = ?, issuedEmployee = ?, payment = ?, deliveryStatus = ?, sum = ? WHERE deliveryNumber = ?",
+    [archive.receiveDate, archive.arriveDate, archive.issuedEmployee, archive.payment, archive.deliveryStatus, archive.sum, archive.deliveryNumber],
     (err, res) => {
       if (err) {
         console.log("error: ", err);
