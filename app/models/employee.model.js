@@ -26,7 +26,7 @@ Employee.create = (newEmployee, result) => {
 };
 
 Employee.findBySalaryAndStartDate = (salary, workStartDate, result) => {
-  sql.query(`SELECT * FROM employee WHERE salary = ${salary} AND workStartDate = ${workStartDate}`, (err, res) => {
+  sql.query(`SELECT * FROM employee WHERE salary = '${salary}' AND workStartDate = ${workStartDate.slice(0, 9)}`, (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(err, null);

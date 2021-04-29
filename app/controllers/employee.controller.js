@@ -83,7 +83,7 @@ exports.update = (req, res) => {
 };
 
 exports.delete = (req, res) => {
-    Employee.remove(req.body.phoneNumber, (err, data) => {
+    Employee.remove(req.body, (err, data) => {
     if (err) {
       if (err.kind === "not_found") {
         res.status(404).send({

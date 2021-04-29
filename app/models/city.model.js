@@ -24,7 +24,7 @@ City.create = (newCity, result) => {
 };
 
 City.findByPopularityAndPostOfficesCount = (popularity, postOfficesCount, result) => {
-  sql.query(`SELECT * FROM city WHERE popularity = ${popularity} AND postOfficesCount = ${postOfficesCount}`, (err, res) => {
+  sql.query(`SELECT * FROM city WHERE popularity >= ${popularity} AND postOfficesCount = ${postOfficesCount}`, (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(err, null);
@@ -77,7 +77,7 @@ City.updateByCountryAndCityName = (city, result) => {
 };
 
 City.remove = (city, result) => {
-  sql.query("DELETE FROM city WHERE cityName = ? AND country = ? AND square = ?", city, (err, res) => {
+  sql.query("DELETE FROM city WHERE cityName = ? AND country = ? AND square = ?", [city.cityName, city.country, city.square], (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(null, err);

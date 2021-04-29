@@ -38,7 +38,7 @@ exports.findAll = (req, res) => {
 };
 
 exports.findOne = (req, res) => {
-    PostOffice.findByByWeightLimitAndWorkersCount(req.body.weightLimit, req.body.workersCount,  (err, data) => {
+    PostOffice.findByWeightLimitAndWorkersCount(req.body.weightLimit, req.body.workersCount,  (err, data) => {
     if (err) {
       if (err.kind === "not_found") {
         res.status(404).send({
@@ -81,7 +81,7 @@ exports.update = (req, res) => {
 };
 
 exports.delete = (req, res) => {
-    PostOffice.remove(req.body.city, req.body.officeNumber, (err, data) => {
+    PostOffice.remove(req.body, (err, data) => {
     if (err) {
       if (err.kind === "not_found") {
         res.status(404).send({
@@ -93,16 +93,5 @@ exports.delete = (req, res) => {
         });
       }
     } else res.send({ message: `post office was deleted successfully!` });
-  });
-};
-
-exports.deleteAll = (req, res) => {
-    PostOffice.removeAll((err, data) => {
-    if (err)
-      res.status(500).send({
-        message:
-          err.message || "Some error occurred while removing all offices."
-      });
-    else res.send({ message: `All offices were deleted successfully!` });
   });
 };

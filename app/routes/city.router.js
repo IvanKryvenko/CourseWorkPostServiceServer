@@ -5,11 +5,9 @@ module.exports = app => {
   
     app.get("/city", cities.findAll);
   
-    app.get("/city/:cityName:country", cities.findOne);
+    app.put("/city/find", cities.findOne);
   
     app.put("/city", cities.update);
   
-    app.delete("/city/:cityName:country", cities.delete);
-  
-    app.delete("/city", cities.deleteAll);
+    app.delete("/city", cities.delete);
   };

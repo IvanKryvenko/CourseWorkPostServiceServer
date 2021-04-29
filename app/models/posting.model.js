@@ -27,7 +27,7 @@ Posting.create = (newDelivery, result) => {
 };
 
 Posting.findByDeliveryTimeAndDeliveryType = (deliveryType, deliveryTime, result) => {
-  sql.query(`SELECT * FROM delivery WHERE deliveryType = ${deliveryType} AND deliveryTime = ${deliveryTime}`, (err, res) => {
+  sql.query(`SELECT * FROM delivery WHERE deliveryType = '${deliveryType}' AND deliveryTime = '${deliveryTime}'`, (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(err, null);

@@ -82,7 +82,7 @@ exports.update = (req, res) => {
 };
 
 exports.delete = (req, res) => {
-  Client.remove(req.body.email, (err, data) => {
+  Client.remove(req.body, (err, data) => {
     if (err) {
       if (err.kind === "not_found") {
         res.status(404).send({

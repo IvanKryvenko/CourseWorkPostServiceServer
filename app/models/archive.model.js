@@ -25,7 +25,7 @@ Archive.create = (newArchivedDelivery, result) => {
 };
 
 Archive.findByIssuedEmployeeAndSum = (issuedEmployee, sum, result) => {
-  sql.query(`SELECT * FROM archive WHERE issuedEmployee = ${issuedEmployee} AND sum > ${sum}`, (err, res) => {
+  sql.query(`SELECT * FROM archive WHERE issuedEmployee = '${issuedEmployee}' AND sum = '${sum}'`, (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(err, null);
@@ -78,7 +78,7 @@ Archive.updateByDeliveryNumber = (archive, result) => {
 };
 
 Archive.remove = (archive, result) => {
-  sql.query("DELETE FROM archive WHERE deliveryNumber = ?", archive, (err, res) => {
+  sql.query("DELETE FROM archive WHERE deliveryNumber = ?", archive.deliveryNumber, (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(null, err);

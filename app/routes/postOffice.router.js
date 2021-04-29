@@ -5,11 +5,9 @@ module.exports = app => {
   
     app.get("/office", offices.findAll);
   
-    app.get("/office/:officeNumber:city", offices.findOne);
+    app.put("/office/find", offices.findOne);
   
     app.put("/office", offices.update);
   
-    app.delete("/office/:officeNumber:city", offices.delete);
-  
-    app.delete("/office", offices.deleteAll);
+    app.delete("/office", offices.delete);
   };

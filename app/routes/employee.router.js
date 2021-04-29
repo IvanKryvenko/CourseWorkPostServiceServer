@@ -5,11 +5,9 @@ module.exports = app => {
   
     app.get("/employee", employees.findAll);
   
-    app.get("/employee/:phoneNumber", employees.findOne);
+    app.put("/employee/find", employees.findOne);
   
     app.put("/employee", employees.update);
   
-    app.delete("/employee/:phoneNumber", employees.delete);
-  
-    app.delete("/employee", employees.deleteAll);
+    app.delete("/employee", employees.delete);
   };

@@ -82,7 +82,7 @@ exports.update = (req, res) => {
 };
 
 exports.delete = (req, res) => {
-  City.remove(req.body.country, req.body.cityName, (err, data) => {
+  City.remove(req.body, (err, data) => {
     if (err) {
       if (err.kind === "not_found") {
         res.status(404).send({

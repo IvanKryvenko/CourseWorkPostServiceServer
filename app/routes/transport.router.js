@@ -5,11 +5,9 @@ module.exports = app => {
   
     app.get("/transport", transports.findAll);
   
-    app.get("/transport/:licensePlateNumber", transports.findOne);
+    app.put("/transport/find", transports.findOne);
   
     app.put("/transport", transports.update);
   
-    app.delete("/transport/:licensePlateNumber", transports.delete);
-  
-    app.delete("/transport", transports.deleteAll);
+    app.delete("/transport", transports.delete);
   };

@@ -21,6 +21,7 @@ require('./app/routes/posting.router')(app);
 require('./app/routes/postOffice.router')(app);
 require('./app/routes/service.router')(app);
 require('./app/routes/transport.router')(app);
+require('./app/routes/custom.router')(app);
 
 app.listen(port, () => {
     console.log(`server listening in ${port} port`);

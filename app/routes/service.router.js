@@ -5,11 +5,9 @@ module.exports = app => {
   
     app.get("/service", services.findAll);
   
-    app.get("/service/:serviceName:serviceCustomer", services.findOne);
+    app.put("/service/find", services.findOne);
   
     app.put("/service", services.update);
   
-    app.delete("/service/:serviceName:serviceCustomer", services.delete);
-  
-    app.delete("/service", services.deleteAll);
+    app.delete("/service", services.delete);
   };

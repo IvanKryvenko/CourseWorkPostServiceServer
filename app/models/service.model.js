@@ -23,7 +23,7 @@ Service.create = (newService, result) => {
 };
 
 Service.findByPriceAndRating = (price, rating, result) => {
-  sql.query(`SELECT * FROM service WHERE price = ${price} AND rating = ${rating}`, (err, res) => {
+  sql.query(`SELECT * FROM service WHERE servicePrice = '${price}' AND serviceRating = '${rating}'`, (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(err, null);

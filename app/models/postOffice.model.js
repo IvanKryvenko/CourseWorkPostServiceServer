@@ -24,7 +24,7 @@ PostOffice.create = (newPostOffice, result) => {
 };
 
 PostOffice.findByWeightLimitAndWorkersCount = (weightLimit, workersCount, result) => {
-  sql.query(`SELECT * FROM postOffice WHERE weightLimit = ${weightLimit} AND workersCount = ${workersCount}`, (err, res) => {
+  sql.query(`SELECT * FROM postOffice WHERE weightLimit = '${weightLimit}' AND workersCount = ${workersCount}`, (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(err, null);

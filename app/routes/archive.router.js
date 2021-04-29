@@ -5,11 +5,9 @@ module.exports = app => {
   
     app.get("/archive", archives.findAll);
   
-    app.get("/archive/:archiveId", archives.findOne);
+    app.put("/archive/find", archives.findOne);
   
     app.put("/archive/:archiveId", archives.update);
   
-    app.delete("/archive/:archiveId", archives.delete);
-  
-    app.delete("/archive", archives.deleteAll);
+    app.delete("/archive", archives.delete);
   };

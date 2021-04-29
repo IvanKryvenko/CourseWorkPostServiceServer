@@ -24,7 +24,7 @@ Transport.create = (newTransport, result) => {
 };
 
 Transport.findByReleaseDateAndCapacity = (releaseDate, capacity, result) => {
-  sql.query(`SELECT * FROM transport WHERE releaseDate = ${releaseDate} AND capacity = ${capacity}`, (err, res) => {
+  sql.query(`SELECT * FROM transport WHERE releaseDate = ${releaseDate} AND capacity = '${capacity}'`, (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(err, null);

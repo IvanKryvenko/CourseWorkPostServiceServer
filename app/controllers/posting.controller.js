@@ -84,7 +84,7 @@ exports.update = (req, res) => {
 };
 
 exports.delete = (req, res) => {
-    Posting.remove(req.body.deliveryNumber, (err, data) => {
+    Posting.remove(req.body, (err, data) => {
     if (err) {
       if (err.kind === "not_found") {
         res.status(404).send({

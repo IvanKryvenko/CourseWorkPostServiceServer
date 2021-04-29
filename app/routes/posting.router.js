@@ -5,11 +5,9 @@ module.exports = app => {
   
     app.get("/posting", postings.findAll);
   
-    app.get("/posting/:deliveryNumber", postings.findOne);
+    app.put("/posting/find", postings.findOne);
   
     app.put("/posting", postings.update);
   
-    app.delete("/posting/:deliveryNumber", postings.delete);
-  
-    app.delete("/posting", postings.deleteAll);
+    app.delete("/posting", postings.delete);
   };
